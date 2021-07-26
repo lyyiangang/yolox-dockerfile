@@ -4,3 +4,6 @@ RUN mkdir ~/.pip && echo -e "[global]\nindex-url = https://pypi.doubanio.com/sim
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt && pip install cython 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get install ffmpeg libsm6 libxext6  -y
+
+# install torch2trt
+RUN cd /tmp && git clone https://github.com/NVIDIA-AI-IOT/torch2trt && cd /tmp/torch2trt && python setup.py install && rm -rf /tmp/torch2trt

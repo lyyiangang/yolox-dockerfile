@@ -33,9 +33,21 @@ python tools/demo.py image -n yolox-s -c model/yolox_s.pth --path assets/dog.jpg
 
 ![](doc/dog.jpg)
 
+# 测试TensorRT
+
+参考官方的[readme](https://github.com/Megvii-BaseDetection/YOLOX/tree/main/demo/TensorRT/python), 先用```tools/trt.py```生成tensorrt引擎，
+然后用```demo.py```推理。
+对于分辨率416x416的图片，使用yolox-nano推理，1060 6Gb内存显卡上，推理时间如下：
+```
+2021-07-26 03:24:55.346 | INFO     | __main__:inference:136 - Infer time: 0.0039s
+2021-07-26 03:24:55.365 | INFO     | __main__:inference:136 - Infer time: 0.0041s
+2021-07-26 03:24:55.384 | INFO     | __main__:inference:136 - Infer time: 0.0044s
+2021-07-26 03:24:55.404 | INFO     | __main__:inference:136 - Infer time: 0.0043s
+2021-07-26 03:24:55.426 | INFO     | __main__:inference:136 - Infer time: 0.0075s
+```
 
 # TODO
 
-- [ ] tensorrt支持
+- [x] tensorrt支持
 - [ ] ncnn支持
 - [ ] 训练apex支持
