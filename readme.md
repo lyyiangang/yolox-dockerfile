@@ -49,5 +49,5 @@ python tools/demo.py image -n yolox-s -c model/yolox_s.pth --path assets/dog.jpg
 # TODO
 
 - [x] tensorrt支持
+- [x] 支持apex
 - [ ] ncnn支持
-- [ ] 训练apex支持
